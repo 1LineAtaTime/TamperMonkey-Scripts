@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Ring Dashboard Auto Reconnect
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  Automatically clicks the Reconnect button in the Ring Dashboard Live View Camera when it appears due to a timeout.
 // @author       1LineAtaTime
 // @match        https://account.ring.com/account/dashboard*
@@ -15,14 +15,19 @@
     // Function to check for the Reconnect button and click it
     function checkAndClickReconnect() {
         // Change the selector as per the actual button class or ID
-        var reconnectButton = document.querySelector('button[data-testid="video-error__button"][aria-label="Reconnect"]'); // Update this selector if needed
+        const reconnectButtonA = document.querySelector('button[data-testid="video-error__button"][aria-label="Reconnect"]'); // Update this selector if needed
+        const reconnectButtonB = document.querySelector('button[data-testid="modal__accept-button"]');
 
-        if (reconnectButton) {
+        if (reconnectButtonA) {
             console.log('Reconnect button found, clicking...');
-            reconnectButton.click();
+            reconnectButtonA.click();
+        }
+        else if (reconnectButtonB && reconnectButtonB.textContent.includes('Reconnect')) {
+            console.log('Reconnect button found, clicking...');
+            reconnectButtonB.click();
         }
     }
-
+    
     // Observe changes in the DOM to detect when the checkbox appears
     const observer = new MutationObserver(() => {
         checkAndClickReconnect();
