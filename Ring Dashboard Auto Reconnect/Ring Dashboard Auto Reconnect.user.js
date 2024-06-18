@@ -1,9 +1,10 @@
 // ==UserScript==
 // @name         Ring Dashboard Auto Reconnect
-// @namespace    http://tampermonkey.net/
-// @version      0.2
+// @namespace    https://github.com/1LineAtaTime/TamperMonkey-Scripts
+// @version      0.3
 // @description  Automatically clicks the Reconnect button in the Ring Dashboard Live View Camera when it appears due to a timeout.
 // @author       1LineAtaTime
+// @license      MIT
 // @match        https://account.ring.com/account/dashboard*
 // @icon         https://www.google.com/s2/favicons?domain=ring.com
 // @grant        none

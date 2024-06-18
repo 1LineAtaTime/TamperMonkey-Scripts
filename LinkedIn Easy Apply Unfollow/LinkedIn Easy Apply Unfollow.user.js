@@ -1,9 +1,10 @@
 // ==UserScript==
-// @name         LinkedIn Easy Apply Unfollow
-// @namespace    http://tampermonkey.net/
-// @version      0.3
-// @description  Automatically unclicks the Follow button in the Easy Apply application.
+// @name         LinkedIn Easy Apply Unfollow & Automate Submit/Close Windows
+// @namespace    https://github.com/1LineAtaTime/TamperMonkey-Scripts
+// @version      0.4
+// @description  Automatically unclicks the Follow button in the Easy Apply application, and automates the process of submitting and closing the application once all the information has been entered.
 // @author       1LineAtaTime
+// @license      MIT
 // @match        https://www.linkedin.com/jobs/search/?currentJobId*
 // @match        https://www.linkedin.com/jobs/view/*
 // @icon         https://www.google.com/s2/favicons?domain=linkedin.com
