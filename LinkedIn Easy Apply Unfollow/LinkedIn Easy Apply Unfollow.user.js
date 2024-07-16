@@ -5,8 +5,7 @@
 // @description  Automatically unclicks the Follow button in the Easy Apply application, and automates the process of submitting and closing the application once all the information has been entered.
 // @author       1LineAtaTime
 // @license      MIT
-// @match        https://www.linkedin.com/jobs/search/?currentJobId*
-// @match        https://www.linkedin.com/jobs/view/*
+// @match        https://*.linkedin.com/jobs/*
 // @icon         https://www.google.com/s2/favicons?domain=linkedin.com
 // @grant        none
 // ==/UserScript==
