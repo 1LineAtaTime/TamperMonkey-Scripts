@@ -1,8 +1,8 @@
 // ==UserScript==
 // @namespace    https://github.com/1LineAtaTime/TamperMonkey-Scripts
 // @name         LinkedInJunkFilter
-// @version      0.1
-// @description  Removes customizable job offers from Indeed by automatically hiding any job element that has any keywords from the filterList. Fork from https://update.greasyfork.org/scripts/465779/LinkedInJunkFilter.user.js
+// @version      0.2
+// @description  Removes customizable job offers from LinkedIn by automatically hiding any job element that has any keywords from the filterList. Fork from https://update.greasyfork.org/scripts/465779/LinkedInJunkFilter.user.js
 // @author       1LineAtaTime
 // @match        https://*.linkedin.com/jobs/*
 // @grant        none
@@ -13,7 +13,7 @@
 
 // // Customize this list. Job offers, where the preview contains one of these Strings will be removed.
 
-const filterList = ["Applied", "Viewed"]//, "Promoted"];
+const filterList = ["Applied", "Viewed", "Promoted"];
 let $ = this.jQuery = jQuery.noConflict(true);
 
 // Case insensitive contains
