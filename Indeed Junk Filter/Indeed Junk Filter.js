@@ -1,7 +1,7 @@
 // ==UserScript==
 // @namespace    https://github.com/1LineAtaTime/TamperMonkey-Scripts
 // @name         IndeedJunkFilter
-// @version      0.1
+// @version      2.0
 // @description  Removes customizable job offers from Indeed by automatically hiding any job element that has any keywords from the filterList. Fork from https://greasyfork.org/en/scripts/465779-linkedinjunkfilter
 // @author       1LineAtaTime
 // @match        https://*.indeed.com/jobs*
@@ -9,6 +9,7 @@
 // @require      https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js
 // @icon         https://www.google.com/s2/favicons?domain=indeed.com
 // @license      GPL-3.0
+
 // ==/UserScript==
 
 // Customize this list. Job offers, where the preview contains one of these Strings will be removed.
@@ -24,12 +25,12 @@ $.expr[':'].icontains = function(a, i, m) {
 };
 
 function removeLi(str) {
-    let list = $(`li.css-5lfssm:icontains('${str}')`)
+    let list = $(`li.css-1ac2h1w:icontains('${str}')`)
     for (let li of list)
     {
         if (li.hidden == false)
         {
-            console.log( "IndeedJunkFilter; filtered out: \t" + li.querySelector("h2.jobTitle").textContent)
+            console.log( "IndeedJunkFilter; filtered out: \t" + li.querySelector("h2.jobTitle").textContent + " - " + str) //li.querySelector(".jobTitle css-198pbd eu4oa1w0").text.trim() )
             li.hidden = true
         }
     }
